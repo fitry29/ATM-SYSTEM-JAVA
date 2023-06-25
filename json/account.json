@@ -17,6 +17,12 @@
         "pass": "syah9090",
         "accNumber": "003A",
         "balance": "5500"
+      },
+      {
+        "name": "Kasim",
+        "pass": "asdf1234",
+        "accNumber": "004A",
+        "balance": "56527"
       }
     ]
   }
