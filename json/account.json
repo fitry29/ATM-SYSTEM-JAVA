@@ -1,0 +1,22 @@
+{
+    "account": [
+      {
+        "name": "Fitry",
+        "pass": "fit123",
+        "accNumber": "001A",
+        "balance": "10000"
+      },
+      {
+        "name": "Kina",
+        "pass": "123Kina",
+        "accNumber": "002A",
+        "balance": "5000"
+      },
+      {
+        "name": "Syahmi",
+        "pass": "syah9090",
+        "accNumber": "003A",
+        "balance": "5500"
+      }
+    ]
+  }
