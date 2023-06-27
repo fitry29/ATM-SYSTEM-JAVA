@@ -1,6 +1,8 @@
 package com.example;
 
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -9,6 +11,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AtmApp {
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -35,9 +39,12 @@ public class AtmApp {
             String name = (String) accountJSON.get("name");
             String pass = (String) accountJSON.get("pass");
             String accNumber = (String) accountJSON.get("accNumber");
-            String balance = (String) accountJSON.get("balance");
+            // String balance = (String) accountJSON.get("balance");
+            Long d = (Long) accountJSON.get("balance"); // => 1.23
+            double dbalance = (double)d;
 
-            double dbalance = Double.parseDouble(balance);
+
+            // double dbalance = Double.parseDouble(balance);
 
             // System.out.println();
             // System.out.println("------ACCOUNT " + (i + 1) + " DETAILS------");
@@ -61,7 +68,7 @@ public class AtmApp {
         String transferAcc;
         double transferAmount = 0;
         boolean resultTransfer = false, resultAccount = false;
-
+        
         while (menuNumber != 2) {
             System.out.println("\n--ENTER NUMBER FOR ACTION---");
             System.out.println("\n--[1]-LOGIN-----------------");
@@ -187,6 +194,17 @@ public class AtmApp {
         System.out.println("----------------------------");
         System.out.println();
         in.close();
+
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonData = mapper.writeValueAsString(accArr);
+
+        System.out.println(jsonData);
+
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(".\\json\\account.json"));
+        writer.write("{\"account\":"  + jsonData  + "}");
+
+        writer.close();
     }
 
     private static void menuAccount() {

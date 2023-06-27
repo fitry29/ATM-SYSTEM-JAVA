@@ -1,28 +1,28 @@
 {
-    "account": [
-      {
-        "name": "Fitry",
-        "pass": "fit123",
-        "accNumber": "001A",
-        "balance": "10000"
-      },
-      {
-        "name": "Kina",
-        "pass": "123Kina",
-        "accNumber": "002A",
-        "balance": "5000"
-      },
-      {
-        "name": "Syahmi",
-        "pass": "syah9090",
-        "accNumber": "003A",
-        "balance": "5500"
-      },
-      {
-        "name": "Kasim",
-        "pass": "asdf1234",
-        "accNumber": "004A",
-        "balance": "56527"
-      }
-    ]
-  }
+  "account": [
+    {
+      "balance": 72705.85,
+      "name": "Fitry",
+      "accountNumber": "001A",
+      "password": "fit123"
+    },
+    {
+      "balance": 5000,
+      "name": "Kina",
+      "accountNumber": "002A",
+      "password": "123Kina"
+    },
+    {
+      "balance": 8150.5,
+      "name": "Syahmi",
+      "accountNumber": "003A",
+      "password": "syah9090"
+    },
+    {
+      "balance": 56527,
+      "name": "Kasim",
+      "accountNumber": "004A",
+      "password": "asdf1234"
+    }
+  ]
+}

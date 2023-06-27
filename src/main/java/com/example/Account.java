@@ -4,9 +4,9 @@ public class Account {
     private String aName;
     private String pass;
     private String accNum;
-    private double balance;
+    private Double balance;
 
-    Account(String name, String pass, String accNum, double balance){
+    Account(String name, String pass, String accNum, Double balance){
         this.aName = name;
         this.pass = pass;
         this.accNum = accNum;
@@ -33,31 +33,31 @@ public class Account {
         this.pass = newPass;
     }
     public void setBalance(double newBalance){
-        this.balance = newBalance;
+        this.balance = newBalance; ;
     }
 
     public double withdrawSaving(double amountWithdraw){
         double latestBalance = 0;
         
-        if(amountWithdraw > balance){
+        if(amountWithdraw > getBalance()){
             System.out.println("\n----NOT ENOUGH BALANCE----");
         }
         else{
-            latestBalance = balance - amountWithdraw;
+            latestBalance = getBalance() - amountWithdraw;
         }
         return latestBalance;
     }
     public double depositSaving(double depositAmount){
         double latestBalance = 0;
         
-        latestBalance = balance + depositAmount;
+        latestBalance = getBalance() + depositAmount;
         
         return latestBalance;
     }
     public double transfer(double transferAmount){
         double latestBalance = 0;
         
-        latestBalance = balance - transferAmount;
+        latestBalance = getBalance() - transferAmount;
         
         return latestBalance;
     }
